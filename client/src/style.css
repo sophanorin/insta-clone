@@ -1,0 +1,65 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90%;
+  min-width: 100%;
+}
+
+.loading {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(180deg);
+}
+
+.loading span {
+  position: absolute;
+  top: calc(12px * var(--i));
+  left: calc(12px * var(--i));
+  right: calc(12px * var(--i));
+  bottom: calc(12px * var(--i));
+  border: 10px solid transparent;
+  border-top: 10px solid #0f0;
+  border-left: 10px solid #0f0;
+  border-radius: 50%;
+  animation: animate 1s alternate ease-in-out infinite;
+  filter: hue-rotate(calc(60deg * var(--i)));
+  animation-delay: calc(-0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+[data-rmiz-btn-open],
+[data-rmiz-btn-close] {
+  cursor: pointer;
+}
+
+.upload-image {
+  display: none;
+}
+.label-upload {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #006b8b;
+}
